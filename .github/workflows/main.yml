@@ -1,11 +1,7 @@
-name: Build IOS
-run-name: Build IOS
+name: Build IOS and MacOS
+run-name: Build IOS and MacOS
 on:
-  push:
-    branches:
-      - '*'
-  pull_request:
-  workflow_dispatch:
+  workflow_dispatch: {}
 jobs:
   Build_IOS:
     runs-on: macos-13
