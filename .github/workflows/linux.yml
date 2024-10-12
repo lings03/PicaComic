@@ -1,7 +1,11 @@
 name: Build Linux
 run-name: Build Linux
 on:
-  workflow_dispatch: {}
+  push:
+    branches:
+      - '*'
+  pull_request:
+  workflow_dispatch:
 jobs:
   Build_Linux:
     runs-on: ubuntu-latest
