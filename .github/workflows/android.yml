@@ -2,39 +2,38 @@ name: Build Android
 run-name: Build Android
 
 on:
-  push:  # 在每次 push 时触发
+  push:
     branches:
-      - '*'  # 匹配所有分支
+      - '*'
 
 jobs:
   Build_Android:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: 检出代码
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - uses: actions/checkout@v4
 
-      # Step 2: 设置 Flutter 环境
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
           architecture: x64
 
-      # Step 3: 获取依赖
       - run: flutter pub get
 
-      # Step 4: 构建 APK 文件 (release)
       - run: flutter build apk --release
 
-      # Step 5: 构建 AAB 文件 (release)
       - run: flutter build appbundle --release
 
-      # Step 6: 上传 APK 文件为构建工件
       - uses: actions/upload-artifact@v4
         with:
           name: app-release.apk
           path: build/app/outputs/flutter-apk/app-release.apk
 
-      # Step 7: 上传 AAB 文件为构建工件
       - uses: actions/upload-artifact@v4
         with:
           name: app-release.aab
