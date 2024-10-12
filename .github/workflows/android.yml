@@ -1,9 +1,7 @@
 name: Build Android
-run-name: Build Android
-
-on:
-  push:
-    branches:
+on: 
+  push: 
+    branches: 
       - '*'
   pull_request:
   workflow_dispatch:
@@ -19,7 +17,16 @@ jobs:
           java-version: '17'
 
       - uses: actions/checkout@v4
-
+      
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+            
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
@@ -35,7 +42,6 @@ jobs:
           mv build/app/outputs/flutter-apk/app-arm64-v8a-release.apk build/app/outputs/flutter-apk/PicaComic-arm64-v8a.apk
           mv build/app/outputs/flutter-apk/app-x86-release.apk build/app/outputs/flutter-apk/PicaComic-x86.apk
           mv build/app/outputs/flutter-apk/app-x86_64-release.apk build/app/outputs/flutter-apk/PicaComic-x86_64.apk
-          mv build/app/outputs/flutter-apk/app-universal-release.apk build/app/outputs/flutter-apk/PicaComic-universal.apk
 
       - name: Upload armeabi-v7a APK
         uses: actions/upload-artifact@v4
