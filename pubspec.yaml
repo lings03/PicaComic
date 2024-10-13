@@ -34,7 +34,7 @@ dependencies:
   dynamic_color: ^1.6.9
   crypto: any
   pointycastle: ^3.7.3
-  uuid: ^3.0.7
+  uuid: ^4.0.0
   photo_view:
     git:
       url: https://github.com/wgh136/photo_view
