@@ -7,6 +7,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   dynamic_color
   file_selector_linux
   flutter_qjs
+  gtk
   screen_retriever
   sqlite3_flutter_libs
   url_launcher_linux

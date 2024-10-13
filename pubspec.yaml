@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dio: 5.4.1
+  dio: ^5.7.0
   shared_preferences: ^2.0.16
   dynamic_color: ^1.6.9
   crypto: any
@@ -49,11 +49,11 @@ dependencies:
       ref: master
   flutter_file_dialog: 3.0.2
   flutter_local_notifications: ^17.2.2
-  share_plus: ^7.0.0
+  share_plus: ^10.0.3
   local_auth: ^2.3.0
   html: any
   dio_cookie_manager: any
-  image: 4.1.0
+  image: ^4.2.0
   shimmer_animation: ^2.1.0
   cookie_jar: any
   workmanager:
@@ -64,14 +64,14 @@ dependencies:
     sdk: flutter
   intl: any
   flutter_displaymode: 0.6.0
-  app_links: 3.4.3
-  flutter_reorderable_grid_view: 5.0.1
+  app_links: ^6.3.2
+  flutter_reorderable_grid_view: ^5.3.2
   webdav_client:
     git:
       url: https://github.com/wgh136/webdav_client
       ref: main
-  dio_http2_adapter: 2.3.1+1
-  sqlite3: 2.1.0
+  dio_http2_adapter: ^2.5.3
+  sqlite3: ^2.4.6
   sqlite3_flutter_libs: any
   zip_flutter:
     git:
@@ -79,7 +79,7 @@ dependencies:
       ref: 92b7309e
   collection: ^1.18.0
   window_manager:
-  flutter_inappwebview: 6.0.0
+  flutter_inappwebview: ^6.1.5
   pdf: ^3.10.8
   flutter_qjs:
     git:
