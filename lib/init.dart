@@ -58,8 +58,8 @@ Future<void> init() async {
     startClearCache();
     if (App.isAndroid) {
       final appLinks = AppLinks();
-      appLinks.allUriLinkStream.listen((uri) async {
-        while(App.mainNavigatorKey == null) {
+      appLinks.uriLinkStream.listen((uri) async {
+        while (App.mainNavigatorKey == null) {
           await Future.delayed(const Duration(milliseconds: 100));
         }
         handleAppLinks(uri);
