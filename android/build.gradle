@@ -1,18 +1,25 @@
 import org.jetbrains.kotlin.gradle.tasks.AbstractKotlinCompile
 
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.7.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0"
+    }
+}
+
 allprojects {
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
         kotlinOptions {
-            jvmTarget = "11"
+            jvmTarget = "17"
             apiVersion = "1.8"
             languageVersion = "1.8"
         }
     }
 
-    tasks.withType(JavaCompile) {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
     repositories {
         google()
         mavenCentral()
@@ -23,6 +30,7 @@ rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
+
 subprojects {
     project.evaluationDependsOn(':app')
 }

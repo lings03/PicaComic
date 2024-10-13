@@ -35,13 +35,17 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
         coreLibraryDesugaringEnabled true
     }
 
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = '17'
     }
 
     sourceSets {
@@ -110,6 +114,6 @@ flutter {
 }
 
 dependencies {
-    implementation 'com.google.android.gms:play-services-base:18.3.0'
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+    implementation 'com.google.android.gms:play-services-base:18.5.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.2'
 }
