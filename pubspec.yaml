@@ -86,7 +86,7 @@ dependencies:
       url: https://github.com/wgh136/flutter_qjs
       ref: ade0b9d
   sliver_tools: ^0.2.12
-  mime: ^1.0.5
+  mime: ^2.0.0
   desktop_webview_window:
     git:
       url: https://github.com/wgh136/flutter_desktop_webview
