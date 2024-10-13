@@ -1,12 +1,17 @@
 import org.jetbrains.kotlin.gradle.tasks.AbstractKotlinCompile
 
 allprojects {
-    tasks.withType(AbstractKotlinCompile).configureEach {
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
         kotlinOptions {
-            jvmTarget = "1.8"
+            jvmTarget = "11"
             apiVersion = "1.8"
             languageVersion = "1.8"
         }
+    }
+
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     repositories {
         google()
