@@ -1,41 +1,23 @@
-library pica_settings;
+library;
 
-import 'dart:convert';
-import 'dart:io';
 
-import 'package:dio/dio.dart';
-import 'package:file_selector/file_selector.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
-import 'package:flutter_reorderable_grid_view/widgets/reorderable_builder.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:pica_comic/base.dart';
 import 'package:pica_comic/comic_source/built_in/picacg.dart';
 import 'package:pica_comic/foundation/cache_manager.dart';
 import 'package:pica_comic/foundation/ui_mode.dart';
 import 'package:pica_comic/main.dart';
-import 'package:pica_comic/network/app_dio.dart';
 import 'package:pica_comic/components/components.dart';
 import 'package:pica_comic/pages/logs_page.dart';
-import 'package:pica_comic/tools/extensions.dart';
 import 'package:pica_comic/tools/io_tools.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import '../../comic_source/comic_source.dart';
 import '../../foundation/app.dart';
-import '../../foundation/local_favorites.dart';
-import '../../network/download.dart';
-import '../../network/eh_network/eh_main_network.dart';
-import '../../network/http_client.dart';
-import '../../network/http_proxy.dart';
-import '../../network/jm_network/jm_network.dart';
-import '../../network/update.dart';
-import '../../network/webdav.dart';
 import '../../tools/background_service.dart';
 import '../../tools/debug.dart';
-import '../welcome_page.dart';
 import 'package:pica_comic/tools/translations.dart';
 
 part "reading_settings.dart";

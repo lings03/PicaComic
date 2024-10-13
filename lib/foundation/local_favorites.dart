@@ -437,9 +437,9 @@ class LocalFavoritesManager {
       }
     } else if ((file = File("${App.dataPath}/local_favorite_temp.db"))
         .existsSync()) {
-      var tmp_db = sqlite3.open(file.path);
+      var tmpDb = sqlite3.open(file.path);
 
-      final folders = tmp_db
+      final folders = tmpDb
           .select("SELECT name FROM sqlite_master WHERE type='table';")
           .map((element) => element["name"] as String)
           .toList();
@@ -449,7 +449,7 @@ class LocalFavoritesManager {
           "read folders from local database $folders");
       var folderToOrder = <String, int>{};
       for (var folder in folders) {
-        var res = tmp_db.select("""
+        var res = tmpDb.select("""
         select * from folder_order
         where folder_name == ?;
       """, [folder]);
@@ -464,7 +464,7 @@ class LocalFavoritesManager {
       });
       var res = <FavoriteItemWithFolderInfo>[];
       for (final folder in folders) {
-        var comics = tmp_db.select("""
+        var comics = tmpDb.select("""
         select * from "$folder";
       """);
         LogManager.addLog(LogLevel.info, "LocalFavoritesManager.readData",
@@ -487,7 +487,7 @@ class LocalFavoritesManager {
       }
       LogManager.addLog(LogLevel.info, "LocalFavoritesManager",
           "skipped $skips comics, total ${res.length}");
-      tmp_db.dispose();
+      tmpDb.dispose();
       file.deleteSync();
     } else {
       LogManager.addLog(LogLevel.info, "LocalFavoritesManager",

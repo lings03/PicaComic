@@ -1,4 +1,4 @@
-library components;
+library;
 
 import 'dart:async';
 import 'dart:collection';

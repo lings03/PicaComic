@@ -6,7 +6,7 @@ import 'package:pica_comic/pages/main_page.dart';
 import 'package:pica_comic/tools/translations.dart';
 
 class AuthPage extends StatefulWidget {
-  const AuthPage({Key? key}) : super(key: key);
+  const AuthPage({super.key});
 
   static bool lock = false;
 

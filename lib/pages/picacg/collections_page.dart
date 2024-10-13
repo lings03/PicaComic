@@ -31,7 +31,7 @@ class CollectionPageLogic extends StateController {
 }
 
 class CollectionsPage extends StatelessWidget {
-  const CollectionsPage({Key? key}) : super(key: key);
+  const CollectionsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

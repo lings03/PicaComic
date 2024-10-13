@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:pica_comic/base.dart';
 import 'package:pica_comic/comic_source/comic_source.dart';
@@ -173,14 +171,14 @@ class CustomDownloadingItem extends DownloadingItem {
       };
 
   CustomDownloadingItem.fromMap(
-      Map<String, dynamic> map,
-      DownloadProgressCallback whenFinish,
-      DownloadProgressCallback whenError,
-      DownloadProgressCallbackAsync updateInfo,
+      super.map,
+      DownloadProgressCallback super.whenFinish,
+      DownloadProgressCallback super.whenError,
+      DownloadProgressCallbackAsync super.updateInfo,
       String id)
       : comic = ComicInfoData.fromJson(map["comic"]),
         _downloadEps = List<int>.from(map["_downloadEps"]),
-        super.fromMap(map, whenFinish, whenError, updateInfo) {
+        super.fromMap() {
     source = ComicSource.find(comic.sourceKey)!;
   }
 

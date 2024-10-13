@@ -17,13 +17,11 @@ typedef FilterChip = FilterChipFixedWidth;
 
 class _FloatingSearchBar extends StatefulWidget {
   const _FloatingSearchBar(
-      {Key? key,
-      required this.supportingText,
+      {required this.supportingText,
       required this.onFinish,
       required this.controller,
       this.onChanged,
-      this.focusNode})
-      : super(key: key);
+      this.focusNode});
 
   final void Function(String) onFinish;
   final String supportingText;

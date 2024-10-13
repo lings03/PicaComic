@@ -4,7 +4,6 @@ import "package:collection/collection.dart";
 import "package:flutter/material.dart";
 import "package:flutter_reorderable_grid_view/widgets/reorderable_builder.dart";
 import "package:pica_comic/base.dart";
-import "package:pica_comic/comic_source/comic_source.dart";
 import 'package:pica_comic/components/components.dart';
 import "package:pica_comic/foundation/app.dart";
 import "package:pica_comic/foundation/local_favorites.dart";

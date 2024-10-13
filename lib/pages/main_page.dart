@@ -53,7 +53,7 @@ void checkClipboard() async {
 }
 
 class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({super.key});
 
   static MainPageState of(BuildContext context) {
     return context.findAncestorStateOfType<MainPageState>()!;

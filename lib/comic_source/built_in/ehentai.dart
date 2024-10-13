@@ -184,7 +184,7 @@ final ehentai = ComicSource.named(
       type: ExplorePageType.multiPageComicList,
       loadPage: _EhentaiGalleriesLoader(
         firstPageLoader: () => EhNetwork().getGalleries(EhNetwork().ehBaseUrl),
-      ),
+      ).call,
     ),
     ExplorePageData.named(
       title: "Eh热门",
@@ -192,7 +192,7 @@ final ehentai = ComicSource.named(
       loadPage: _EhentaiGalleriesLoader(
         firstPageLoader: () =>
             EhNetwork().getGalleries("${EhNetwork().ehBaseUrl}/popular"),
-      ),
+      ).call,
     ),
   ],
   searchPageData: SearchPageData.named(

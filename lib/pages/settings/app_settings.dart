@@ -148,8 +148,7 @@ void setDownloadFolder() async {
 
 class SetDownloadFolderDialog extends StatefulWidget {
   const SetDownloadFolderDialog(
-      {this.paths, this.haveManageFilesPermission = false, Key? key})
-      : super(key: key);
+      {this.paths, this.haveManageFilesPermission = false, super.key});
   final List<String>? paths;
   final bool haveManageFilesPermission;
 
@@ -364,7 +363,7 @@ void setExplorePages(BuildContext context) {
 }
 
 class SetExplorePages extends StatefulWidget {
-  const SetExplorePages({Key? key}) : super(key: key);
+  const SetExplorePages({super.key});
 
   @override
   State<SetExplorePages> createState() => _SetExplorePagesState();

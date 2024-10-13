@@ -91,8 +91,7 @@ Future<T> showPopUpWidget<T>(BuildContext context, Widget widget) async {
 
 class PopUpWidgetScaffold extends StatefulWidget {
   const PopUpWidgetScaffold(
-      {required this.title, required this.body, this.tailing, Key? key})
-      : super(key: key);
+      {required this.title, required this.body, this.tailing, super.key});
   final Widget body;
   final List<Widget>? tailing;
   final String title;

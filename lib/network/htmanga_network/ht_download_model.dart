@@ -1,11 +1,8 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
 import 'package:pica_comic/network/htmanga_network/htmanga_main_network.dart';
 import 'package:pica_comic/network/htmanga_network/models.dart';
 import 'package:pica_comic/network/download_model.dart';
-import '../../base.dart';
 import '../../foundation/image_manager.dart';
 import '../../tools/io_tools.dart';
 
@@ -88,13 +85,13 @@ class DownloadingHtComic extends DownloadingItem {
       {"comic": comic.toJson(), ...super.toBaseMap()};
 
   DownloadingHtComic.fromMap(
-      Map<String, dynamic> map,
-      DownloadProgressCallback whenFinish,
-      DownloadProgressCallback whenError,
-      DownloadProgressCallbackAsync updateInfo,
+      super.map,
+      DownloadProgressCallback super.whenFinish,
+      DownloadProgressCallback super.whenError,
+      DownloadProgressCallbackAsync super.updateInfo,
       String id)
       : comic = HtComicInfo.fromJson(map["comic"]),
-        super.fromMap(map, whenFinish, whenError, updateInfo);
+        super.fromMap();
 
   @override
   FutureOr<DownloadedItem> toDownloadedItem() async {

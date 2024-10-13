@@ -11,7 +11,7 @@ import 'package:pica_comic/tools/translations.dart';
 import 'package:pica_comic/components/components.dart';
 
 class HistoryPage extends StatefulWidget {
-  const HistoryPage({Key? key}) : super(key: key);
+  const HistoryPage({super.key});
 
   @override
   State<HistoryPage> createState() => _HistoryPageState();

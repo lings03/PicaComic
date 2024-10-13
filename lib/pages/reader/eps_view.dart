@@ -1,7 +1,7 @@
 part of pica_reader;
 
 class EpsView extends StatefulWidget {
-  const EpsView(this.data, {Key? key}) : super(key: key);
+  const EpsView(this.data, {super.key});
   final ReadingData data;
 
   @override

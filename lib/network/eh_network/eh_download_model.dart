@@ -245,17 +245,17 @@ class EhDownloadingItem extends DownloadingItem{
   }
 
   EhDownloadingItem.fromMap(
-      Map<String, dynamic> map,
-      DownloadProgressCallback whenFinish,
-      DownloadProgressCallback whenError,
-      DownloadProgressCallbackAsync updateInfo,
+      super.map,
+      DownloadProgressCallback super.whenFinish,
+      DownloadProgressCallback super.whenError,
+      DownloadProgressCallbackAsync super.updateInfo,
       String id
       ):gallery=Gallery.fromJson(map["gallery"]),
         downloadType = map["downloadType"],
         _currentBytes = map["_currentBytes"],
         _totalBytes = map["_totalBytes"],
         _downloadLink = map["_downloadLink"],
-        super.fromMap(map, whenFinish, whenError, updateInfo);
+        super.fromMap();
 
   @override
   FutureOr<DownloadedItem> toDownloadedItem() async {

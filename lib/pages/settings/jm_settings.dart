@@ -15,7 +15,7 @@ class SetJmComicsOrderController extends StateController{
 
 
 class JmSettings extends StatefulWidget {
-  const JmSettings(this.popUp, {Key? key}) : super(key: key);
+  const JmSettings(this.popUp, {super.key});
   final bool popUp;
 
   @override

@@ -65,7 +65,7 @@ class NetworkError extends StatelessWidget {
 }
 
 class ListLoadingIndicator extends StatelessWidget {
-  const ListLoadingIndicator({Key? key}) : super(key: key);
+  const ListLoadingIndicator({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -235,13 +235,13 @@ class _MySliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 
 class FloatingSearchBar extends StatefulWidget {
   const FloatingSearchBar({
-    Key? key,
+    super.key,
     this.height = 56,
     this.trailing,
     required this.onSearch,
     required this.controller,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   /// height of search bar
   final double height;

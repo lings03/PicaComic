@@ -200,7 +200,9 @@ class DownloadManager with _DownloadDb implements Listenable {
 
   void dispose() {
     _runInit = false;
-    downloading.forEach((e) => e.stop());
+    for (var e in downloading) {
+      e.stop();
+    }
     downloading.clear();
     _db?.dispose();
     _db = null;

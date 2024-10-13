@@ -9,7 +9,7 @@ import 'package:pica_comic/network/download_model.dart';
 import 'package:pica_comic/components/components.dart';
 
 class DownloadingPage extends StatefulWidget {
-  const DownloadingPage({Key? key}) : super(key: key);
+  const DownloadingPage({super.key});
 
   @override
   State<DownloadingPage> createState() => _DownloadingPageState();

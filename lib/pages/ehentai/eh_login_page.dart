@@ -11,7 +11,7 @@ import '../../foundation/app.dart';
 import '../../network/eh_network/eh_main_network.dart';
 
 class EhLoginPage extends StatefulWidget {
-  const EhLoginPage({Key? key}) : super(key: key);
+  const EhLoginPage({super.key});
 
   @override
   State<EhLoginPage> createState() => _EhLoginPageState();
@@ -293,11 +293,15 @@ class _EhLoginPageState extends State<EhLoginPage> {
 
     var cookies =
         cookiesMap.entries.map((e) => Cookie(e.key, e.value)).toList();
-    cookies.forEach((element) => element.domain = ".e-hentai.org");
+    for (var element in cookies) {
+      element.domain = ".e-hentai.org";
+    }
     EhNetwork()
         .cookieJar
         .saveFromResponse(Uri.parse("https://e-hentai.org"), cookies);
-    cookies.forEach((element) => element.domain = ".exhentai.org");
+    for (var element in cookies) {
+      element.domain = ".exhentai.org";
+    }
     EhNetwork()
         .cookieJar
         .saveFromResponse(Uri.parse("https://exhentai.org"), cookies);

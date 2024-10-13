@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:typed_data';
 import 'package:pica_comic/network/download_model.dart';
 import 'package:pica_comic/foundation/image_manager.dart';
 import '../../base.dart';
@@ -111,15 +110,15 @@ class HitomiDownloadingItem extends DownloadingItem {
       };
 
   HitomiDownloadingItem.fromMap(
-      Map<String, dynamic> map,
-      DownloadProgressCallback whenFinish,
-      DownloadProgressCallback whenError,
-      DownloadProgressCallbackAsync updateInfo,
+      super.map,
+      DownloadProgressCallback super.whenFinish,
+      DownloadProgressCallback super.whenError,
+      DownloadProgressCallbackAsync super.updateInfo,
       String id)
       : comic = HitomiComic.fromMap(map["comic"]),
         _coverPath = map["_coverPath"],
         link = map["link"],
-        super.fromMap(map, whenFinish, whenError, updateInfo);
+        super.fromMap();
 
   @override
   FutureOr<DownloadedItem> toDownloadedItem() async {

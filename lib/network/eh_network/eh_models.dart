@@ -1,4 +1,3 @@
-import 'package:pica_comic/base.dart';
 import 'package:pica_comic/foundation/history.dart';
 import 'package:pica_comic/network/base_comic.dart';
 

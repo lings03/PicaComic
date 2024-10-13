@@ -1,7 +1,7 @@
-part of pica_settings;
+part of 'settings_page.dart';
 
 class PicacgSettings extends StatefulWidget {
-  const PicacgSettings(this.popUp, {Key? key}) : super(key: key);
+  const PicacgSettings(this.popUp, {super.key});
   final bool popUp;
 
   @override

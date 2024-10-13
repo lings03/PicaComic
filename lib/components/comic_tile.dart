@@ -10,7 +10,7 @@ class ComicTileMenuOption {
 
 abstract class ComicTile extends StatelessWidget {
   /// Show a comic brief information. Usually displayed in comic list page.
-  const ComicTile({Key? key}) : super(key: key);
+  const ComicTile({super.key});
 
   Widget get image;
 

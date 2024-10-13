@@ -34,7 +34,7 @@ class JWRPLogic extends StateController {
 }
 
 class JmWeekRecommendationPage extends StatelessWidget {
-  JmWeekRecommendationPage({Key? key}) : super(key: key);
+  JmWeekRecommendationPage({super.key});
   final logic = StateController.put(JWRPLogic());
 
   @override
@@ -169,7 +169,7 @@ class WRLLogic extends StateController {
 }
 
 class WeekRecommendationList extends StatelessWidget {
-  const WeekRecommendationList(this.id, {Key? key}) : super(key: key);
+  const WeekRecommendationList(this.id, {super.key});
   final String id;
 
   @override

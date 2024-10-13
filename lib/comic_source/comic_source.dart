@@ -1,17 +1,15 @@
-library comic_source;
+library;
 
 import 'dart:async';
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:io';
-import 'dart:math' as math;
 
 import 'package:flutter/widgets.dart';
 import 'package:pica_comic/components/components.dart';
 import 'package:pica_comic/foundation/app.dart';
 import 'package:pica_comic/foundation/history.dart';
 import 'package:pica_comic/foundation/log.dart';
-import 'package:pica_comic/network/update.dart';
 import 'package:pica_comic/tools/extensions.dart';
 import '../base.dart';
 import '../foundation/js_engine.dart';
