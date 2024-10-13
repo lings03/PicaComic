@@ -4,8 +4,8 @@ allprojects {
     tasks.withType(AbstractKotlinCompile).configureEach {
         kotlinOptions {
             jvmTarget = "17"
-            apiVersion = "2.0"
-            languageVersion = "2.0"
+            apiVersion = "1.8"
+            languageVersion = "1.8"
         }
     }
     repositories {
@@ -19,10 +19,9 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 rootProject.buildDir = '../build'
+
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
     project.evaluationDependsOn(':app')
 }
 
