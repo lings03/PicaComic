@@ -15,36 +15,24 @@ class UnboundedCustomScrollView extends CustomScrollView {
   final bool _shrinkWrap;
 
   const UnboundedCustomScrollView({
-    Key? key,
-    Axis scrollDirection = Axis.vertical,
-    bool reverse = false,
-    ScrollController? controller,
-    bool? primary,
-    ScrollPhysics? physics,
+    super.key,
+    super.scrollDirection,
+    super.reverse,
+    super.controller,
+    super.primary,
+    super.physics,
     bool shrinkWrap = false,
-    Key? center,
+    super.center,
     double anchor = 0.0,
-    double? cacheExtent,
-    List<Widget> slivers = const <Widget>[],
-    int? semanticChildCount,
-    DragStartBehavior dragStartBehavior = DragStartBehavior.down,
-    ScrollBehavior? scrollBehavior
+    super.cacheExtent,
+    super.slivers,
+    super.semanticChildCount,
+    super.dragStartBehavior = DragStartBehavior.down,
+    super.scrollBehavior
   })  : _shrinkWrap = shrinkWrap,
         _anchor = anchor,
         super(
-          key: key,
-          scrollDirection: scrollDirection,
-          reverse: reverse,
-          controller: controller,
-          primary: primary,
-          physics: physics,
           shrinkWrap: false,
-          center: center,
-          cacheExtent: cacheExtent,
-          semanticChildCount: semanticChildCount,
-          dragStartBehavior: dragStartBehavior,
-          slivers: slivers,
-          scrollBehavior: scrollBehavior,
         );
 
   // [CustomScrollView] enforces constraints on [CustomScrollView.anchor], so

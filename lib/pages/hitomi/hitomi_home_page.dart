@@ -78,7 +78,7 @@ class HitomiHomePageLogic extends StateController {
 }
 
 class HitomiHomePageComics extends StatelessWidget {
-  const HitomiHomePageComics(this.url, {Key? key}) : super(key: key);
+  const HitomiHomePageComics(this.url, {super.key});
   final String url;
 
   static void Function() refresh = () {};

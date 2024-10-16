@@ -23,8 +23,7 @@ class CommentsPage extends StatelessWidget {
   final bool popUp;
 
   const CommentsPage(this.id,
-      {Key? key, this.type = "comics", this.popUp = false})
-      : super(key: key);
+      {super.key, this.type = "comics", this.popUp = false});
 
   @override
   Widget build(BuildContext context) {
@@ -219,8 +218,7 @@ class ReplyPage extends StatelessWidget {
   final Comment replyTo;
   final bool popUp;
 
-  const ReplyPage(this.id, this.replyTo, {this.popUp = false, Key? key})
-      : super(key: key);
+  const ReplyPage(this.id, this.replyTo, {this.popUp = false, super.key});
 
   @override
   Widget build(BuildContext context) {

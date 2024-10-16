@@ -1,14 +1,10 @@
 import 'dart:async';
-import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:pica_comic/foundation/image_manager.dart';
 import 'package:pica_comic/network/download_model.dart';
 import 'package:pica_comic/tools/extensions.dart';
 import 'package:pica_comic/tools/io_tools.dart';
-import '../../base.dart';
 import '../download.dart';
 import 'methods.dart';
-import 'models.dart';
 import 'dart:io';
 
 class DownloadedComic extends DownloadedItem {
@@ -119,15 +115,15 @@ class PicDownloadingItem extends DownloadingItem {
       };
 
   PicDownloadingItem.fromMap(
-      Map<String, dynamic> map,
-      DownloadProgressCallback whenFinish,
-      DownloadProgressCallback whenError,
-      DownloadProgressCallbackAsync updateInfo,
+      super.map,
+      DownloadProgressCallback super.whenFinish,
+      DownloadProgressCallback super.whenError,
+      DownloadProgressCallbackAsync super.updateInfo,
       String id)
       : comic = ComicItem.fromJson(map["comic"]),
         _eps = List<String>.from(map["_eps"]),
         _downloadEps = List<int>.from(map["_downloadEps"]),
-        super.fromMap(map, whenFinish, whenError, updateInfo);
+        super.fromMap();
 
   @override
   FutureOr<DownloadedItem> toDownloadedItem() async {

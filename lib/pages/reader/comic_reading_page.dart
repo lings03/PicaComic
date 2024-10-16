@@ -1,48 +1,28 @@
-library pica_reader;
+library;
 
 import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:photo_view/photo_view.dart';
-import 'package:photo_view/photo_view_gallery.dart';
-import 'package:pica_comic/comic_source/comic_source.dart';
 import 'package:pica_comic/components/components.dart';
-import 'package:pica_comic/components/custom_slider.dart';
-import 'package:pica_comic/components/scrollable_list/src/item_positions_listener.dart';
-import 'package:pica_comic/components/scrollable_list/src/scrollable_positioned_list.dart';
 import 'package:pica_comic/components/window_frame.dart';
 import 'package:pica_comic/foundation/image_loader/base_image_provider.dart';
-import 'package:pica_comic/foundation/image_loader/file_image_loader.dart';
-import 'package:pica_comic/foundation/image_loader/stream_image_provider.dart';
 import 'package:pica_comic/foundation/local_favorites.dart';
 import 'package:pica_comic/network/download.dart';
 import 'package:pica_comic/network/eh_network/eh_models.dart';
-import 'package:pica_comic/network/eh_network/get_gallery_id.dart';
 import 'package:pica_comic/base.dart';
-import 'package:pica_comic/network/htmanga_network/htmanga_main_network.dart';
 import 'package:pica_comic/network/jm_network/jm_models.dart';
-import 'package:pica_comic/network/nhentai_network/nhentai_main_network.dart';
-import 'package:pica_comic/network/res.dart';
 import 'package:pica_comic/pages/comic_page.dart';
 import 'package:pica_comic/tools/keep_screen_on.dart';
 import 'package:pica_comic/foundation/image_manager.dart';
 import 'package:pica_comic/foundation/history.dart';
 import 'package:pica_comic/tools/save_image.dart';
-import 'package:pica_comic/tools/time.dart';
-import 'package:pica_comic/network/jm_network/jm_network.dart';
 import '../../foundation/app.dart';
-import '../../foundation/ui_mode.dart';
 import '../../network/hitomi_network/hitomi_models.dart';
 import '../../tools/key_down_event.dart';
-import 'package:pica_comic/network/picacg_network/methods.dart';
 import 'package:pica_comic/tools/translations.dart';
 
-import '../jm/jm_comments_page.dart';
 
 part 'eps_view.dart';
 

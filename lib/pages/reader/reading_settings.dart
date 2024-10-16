@@ -20,7 +20,7 @@ void showSettings(BuildContext context) {
 }
 
 class ReadingSettings extends StatefulWidget {
-  const ReadingSettings({Key? key}) : super(key: key);
+  const ReadingSettings({super.key});
 
   @override
   State<ReadingSettings> createState() => _ReadingSettingsState();

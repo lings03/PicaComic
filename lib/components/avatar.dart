@@ -2,15 +2,14 @@ part of 'components.dart';
 
 class Avatar extends StatelessWidget {
   const Avatar(
-      {Key? key,
+      {super.key,
       required this.size,
       this.avatarUrl,
       this.frame,
       this.couldBeShown = false,
       this.name = "",
       this.slogan,
-      this.level = 0})
-      : super(key: key);
+      this.level = 0});
   final double size;
   final String? avatarUrl;
   final String? frame;

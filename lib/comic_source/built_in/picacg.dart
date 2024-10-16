@@ -183,8 +183,7 @@ final picacg = ComicSource.named(
 class _PicComicTile extends ComicTile {
   final ComicItemBrief comic;
 
-  const _PicComicTile(this.comic, {Key? key, this.addonMenuOptions})
-      : super(key: key);
+  const _PicComicTile(this.comic, {this.addonMenuOptions});
 
   @override
   String get description => '${comic.likes} likes';

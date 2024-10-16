@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pica_comic/comic_source/comic_source.dart';
 import 'package:pica_comic/foundation/app.dart';
 import 'package:pica_comic/foundation/local_favorites.dart';
 import 'package:pica_comic/foundation/ui_mode.dart';

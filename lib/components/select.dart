@@ -5,11 +5,11 @@ class Select extends StatefulWidget {
     required this.initialValue,
     this.width = 120,
     required this.onChange,
-    Key? key,
+    super.key,
     required this.values,
     this.disabledValues = const [],
     this.outline = false,
-  }) : super(key: key);
+  });
 
   ///初始值, 提供values的下标
   final int? initialValue;

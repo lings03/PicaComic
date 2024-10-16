@@ -3,8 +3,7 @@ import 'package:pica_comic/tools/translations.dart';
 
 class SelectDownloadChapter extends StatefulWidget {
   const SelectDownloadChapter(this.eps, this.finishSelect, this.downloadedEps,
-      {Key? key})
-      : super(key: key);
+      {super.key});
   final List<String> eps;
   final void Function(List<int>) finishSelect;
   final List<int> downloadedEps;

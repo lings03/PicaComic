@@ -7,7 +7,7 @@ class BlockingKeywordPageLogic extends StateController {
 }
 
 class BlockingKeywordPage extends StatelessWidget {
-  BlockingKeywordPage({this.popUp = false, Key? key}) : super(key: key) {
+  BlockingKeywordPage({this.popUp = false, super.key}) {
     StateController.put(BlockingKeywordPageLogic());
   }
 

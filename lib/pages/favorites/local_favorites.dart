@@ -174,7 +174,7 @@ class _UpdateFavoritesInfoDialogState extends State<UpdateFavoritesInfoDialog> {
 }
 
 class CreateFolderDialog extends StatelessWidget {
-  const CreateFolderDialog({Key? key}) : super(key: key);
+  const CreateFolderDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -261,7 +261,7 @@ class CreateFolderDialog extends StatelessWidget {
 }
 
 class RenameFolderDialog extends StatelessWidget {
-  const RenameFolderDialog(this.before, {Key? key}) : super(key: key);
+  const RenameFolderDialog(this.before, {super.key});
 
   final String before;
 

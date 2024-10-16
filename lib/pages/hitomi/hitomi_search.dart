@@ -46,7 +46,7 @@ class _SearchPageComicListState
 }
 
 class HitomiSearchPage extends StatefulWidget {
-  const HitomiSearchPage(this.keyword, {Key? key}) : super(key: key);
+  const HitomiSearchPage(this.keyword, {super.key});
   final String keyword;
 
   @override
@@ -121,8 +121,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 
 class HitomiComicTileDynamicLoading extends StatefulWidget {
   const HitomiComicTileDynamicLoading(this.id,
-      {Key? key, this.addonMenuOptions})
-      : super(key: key);
+      {super.key, this.addonMenuOptions});
   final int id;
 
   final List<ComicTileMenuOption>? addonMenuOptions;

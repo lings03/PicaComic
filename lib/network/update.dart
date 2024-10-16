@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:pica_comic/base.dart';
 import 'package:pica_comic/network/app_dio.dart';
 

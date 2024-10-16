@@ -67,8 +67,7 @@ class JmCommentsPageLogic extends StateController {
 
 class JmCommentsPage extends StatelessWidget {
   const JmCommentsPage(this.id, this.totalComments,
-      {this.mode, this.popUp = false, Key? key})
-      : super(key: key);
+      {this.mode, this.popUp = false, super.key});
   final String id;
   final bool popUp;
   final String? mode;

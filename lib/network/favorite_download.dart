@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:typed_data';
 
 import 'package:pica_comic/foundation/image_manager.dart';
 import 'package:pica_comic/foundation/local_favorites.dart';
@@ -108,13 +107,13 @@ class FavoriteDownloading extends DownloadingItem{
     };
   }
 
-  FavoriteDownloading.fromMap(Map<String, dynamic> json,
-      DownloadProgressCallback whenFinish,
-      DownloadProgressCallback whenError,
-      DownloadProgressCallbackAsync updateInfo,
+  FavoriteDownloading.fromMap(super.json,
+      DownloadProgressCallback super.whenFinish,
+      DownloadProgressCallback super.whenError,
+      DownloadProgressCallbackAsync super.updateInfo,
       String id)
       : comic = FavoriteItem.fromJson(json["comic"]),
-        super.fromMap(json, whenFinish, whenError, updateInfo);
+        super.fromMap();
 
   @override
   FutureOr<DownloadedItem> toDownloadedItem() =>

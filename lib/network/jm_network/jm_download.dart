@@ -1,7 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
-import 'package:flutter/foundation.dart';
-import 'package:pica_comic/base.dart';
 import 'package:pica_comic/network/download.dart';
 import 'package:pica_comic/foundation/image_manager.dart';
 import 'jm_image.dart';
@@ -155,14 +152,14 @@ class JmDownloadingItem extends DownloadingItem {
       };
 
   JmDownloadingItem.fromMap(
-      Map<String, dynamic> map,
-      DownloadProgressCallback whenFinish,
-      DownloadProgressCallback whenError,
-      DownloadProgressCallbackAsync updateInfo,
+      super.map,
+      DownloadProgressCallback super.whenFinish,
+      DownloadProgressCallback super.whenError,
+      DownloadProgressCallbackAsync super.updateInfo,
       String id)
       : comic = JmComicInfo.fromMap(map["comic"]),
         _downloadEps = List<int>.from(map["_downloadEps"]),
-        super.fromMap(map, whenFinish, whenError, updateInfo);
+        super.fromMap();
 
   @override
   FutureOr<DownloadedItem> toDownloadedItem() async {

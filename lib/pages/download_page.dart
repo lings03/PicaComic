@@ -211,7 +211,7 @@ class DownloadPageLogic extends StateController {
 }
 
 class DownloadPage extends StatelessWidget {
-  const DownloadPage({Key? key}) : super(key: key);
+  const DownloadPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -919,8 +919,7 @@ class DownloadPage extends StatelessWidget {
 }
 
 class DownloadedComicInfoView extends StatefulWidget {
-  const DownloadedComicInfoView(this.item, this.logic, {Key? key})
-      : super(key: key);
+  const DownloadedComicInfoView(this.item, this.logic, {super.key});
   final DownloadedItem item;
   final DownloadPageLogic logic;
 

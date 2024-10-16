@@ -1,7 +1,7 @@
 part of pica_settings;
 
 class EhSettings extends StatefulWidget {
-  const EhSettings(this.popUp, {Key? key}) : super(key: key);
+  const EhSettings(this.popUp, {super.key});
   final bool popUp;
 
   @override

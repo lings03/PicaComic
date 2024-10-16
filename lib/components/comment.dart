@@ -4,7 +4,7 @@ import 'components.dart';
 
 class CommentTile extends StatelessWidget {
   const CommentTile(
-      {Key? key,
+      {super.key,
       required this.avatarUrl,
       this.frameUrl,
       required this.name,
@@ -18,8 +18,7 @@ class CommentTile extends StatelessWidget {
       this.liked,
       this.comments,
       this.leading,
-      this.like})
-      : super(key: key);
+      this.like});
   final String? avatarUrl;
   final String? frameUrl;
   final String name;
