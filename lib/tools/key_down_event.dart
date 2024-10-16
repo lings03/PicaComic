@@ -5,7 +5,7 @@ import 'package:pica_comic/foundation/app.dart';
 class ListenVolumeController{
   void Function() whenUp;
   void Function() whenDown;
-  static const channel = EventChannel("com.github.pacalini.pica_comic/volume");
+  static const channel = EventChannel("com.kokoiro.xyz.pica_comic/volume");
   StreamSubscription? _streamSubscription;
 
   ListenVolumeController(this.whenUp,this.whenDown);

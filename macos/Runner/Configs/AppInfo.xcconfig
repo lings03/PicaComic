@@ -8,7 +8,7 @@
 PRODUCT_NAME = pica_comic
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.github.pacalini.picaComic
+PRODUCT_BUNDLE_IDENTIFIER = com.kokoiro.xyz.picaComic
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.github.pacalini. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 com.kokoiro.xyz. All rights reserved.

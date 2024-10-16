@@ -7,7 +7,9 @@
 
 A comic app with multiple sources built with flutter.
 
-Forked from [wgh136](https://github.com/wgh136/PicaComic), minimal fix & supported provided, no guaranteed roadmap.
+Origin from wgh136/PicaComic
+
+Folked from [wgh136](https://github.com/wgh136/PicaComic), minimal fix & supported provided, no guaranteed roadmap.
 
 ## Download
 

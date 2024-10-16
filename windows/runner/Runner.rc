@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.github.pacalini" "\0"
+            VALUE "CompanyName", "com.kokoiro.xyz" "\0"
             VALUE "FileDescription", "pica_comic" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "pica_comic" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.github.pacalini. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 com.kokoiro.xyz. All rights reserved." "\0"
             VALUE "OriginalFilename", "pica_comic.exe" "\0"
             VALUE "ProductName", "pica_comic" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

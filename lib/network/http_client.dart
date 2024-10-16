@@ -21,7 +21,7 @@ Future<String?> getProxy() async{
 
   String res;
   if(!App.isLinux) {
-    const channel = MethodChannel("com.github.pacalini.pica_comic/proxy");
+    const channel = MethodChannel("kokoiro.xyz.pica_comic/proxy");
     try {
       res = await channel.invokeMethod("getProxy");
     }
