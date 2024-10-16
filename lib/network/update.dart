@@ -7,7 +7,7 @@ String? _updateInfo;
 Future<String> getLatestVersion() async {
   var dio = logDio();
   var res = await dio
-      .get("https://api.github.com/repos/Pacalini/PicaComic/releases/latest");
+      .get("https://api.github.com/repos/lings03/PicaComic/releases/latest");
   _updateInfo = res.data["body"];
   return (res.data["tag_name"] as String).replaceFirst("v", "");
 }

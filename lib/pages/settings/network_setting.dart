@@ -58,7 +58,7 @@ class _NetworkSettingsState extends State<NetworkSettings> {
           title: Text("帮助".tl),
           trailing: const Icon(Icons.arrow_right),
           onTap: (){
-            launchUrlString("https://github.com/Pacalini/PicaComic/blob/master/doc/hosts.md");
+            launchUrlString("https://github.com/lings03/PicaComic/blob/master/doc/hosts.md");
           },
         ),
         Padding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom))

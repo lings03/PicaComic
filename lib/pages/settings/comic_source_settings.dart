@@ -13,7 +13,7 @@ class ComicSourceSettings extends StatefulWidget {
     var controller = showLoading ? showLoadingDialog(App.globalContext!) : null;
     var dio = logDio();
     var res = await dio.get<String>(
-        "https://raw.githubusercontent.com/wgh136/pica_configs/master/index.json");
+        "https://raw.githubusercontent.com/lings03/pica_configs/master/index.json");
     if (res.statusCode != 200) {
       showToast(message: "网络错误".tl);
       return;

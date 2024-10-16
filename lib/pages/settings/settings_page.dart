@@ -624,19 +624,19 @@ class _SettingsPageState extends State<SettingsPage> implements PopEntry{
         ),
         ListTile(
           leading: const Icon(Icons.code),
-          title: Text("项目地址".tl),
-          onTap: () => launchUrlString("https://github.com/Pacalini/PicaComic",
+          title: Text("项目地址(Github)".tl),
+          onTap: () => launchUrlString("https://github.com/lings03/PicaComic",
               mode: LaunchMode.externalApplication),
           trailing: const Icon(Icons.arrow_right),
         ),
-        ListTile(
-          leading: const Icon(Icons.comment_outlined),
-          title: Text("提出建议(Github)".tl),
-          onTap: () => launchUrlString(
-              "https://github.com/Pacalini/PicaComic/issues",
-              mode: LaunchMode.externalApplication),
-          trailing: const Icon(Icons.arrow_right),
-        ),
+        // ListTile(
+        //   leading: const Icon(Icons.comment_outlined),
+        //   title: Text("提出建议(Github)".tl),
+        //   onTap: () => launchUrlString(
+        //       "https://github.com/Pacalini/lings03/issues",
+        //       mode: LaunchMode.externalApplication),
+        //   trailing: const Icon(Icons.arrow_right),
+        // ),
         // ListTile(
         //   leading: const Icon(Icons.email),
         //   title: Text("通过电子邮件联系我".tl),
