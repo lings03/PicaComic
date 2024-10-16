@@ -254,6 +254,7 @@ class MainPageState extends State<MainPage> {
         );
       },
       onPageChange: (index) {
+        HapticFeedback.selectionClick();
         _navigatorKey!.currentState?.pushAndRemoveUntil(
             AppPageRoute(
                 preventRebuild: false,

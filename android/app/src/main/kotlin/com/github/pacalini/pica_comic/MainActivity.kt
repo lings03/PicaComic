@@ -1,4 +1,4 @@
-package com.kokoiro.xyz.pica_comic
+package com.github.pacalini.pica_comic
 
 import android.os.Build
 import android.view.KeyEvent
@@ -24,7 +24,7 @@ class MainActivity: FlutterFragmentActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         GeneratedPluginRegistrant.registerWith(flutterEngine)
 
-        val channel = EventChannel(flutterEngine.dartExecutor.binaryMessenger, "com.kokoiro.xyz.pica_comic/volume")
+        val channel = EventChannel(flutterEngine.dartExecutor.binaryMessenger, "com.github.pacalini.pica_comic/volume")
         channel.setStreamHandler(
             object : EventChannel.StreamHandler {
                 override fun onListen(arguments: Any?, events: EventChannel.EventSink) {
@@ -41,26 +41,26 @@ class MainActivity: FlutterFragmentActivity() {
                 }
         })
         //拦截屏幕截图
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger,"com.kokoiro.xyz.pica_comic/screenshot").setMethodCallHandler{
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger,"com.github.pacalini.pica_comic/screenshot").setMethodCallHandler{
                 _, _ ->
             window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
         }
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger,"com.kokoiro.xyz.pica_comic/secure").setMethodCallHandler{
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger,"com.github.pacalini.pica_comic/secure").setMethodCallHandler{
                 _, _ ->
             window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
         }
         //获取cpu架构
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger,"com.kokoiro.xyz.pica_comic/device").setMethodCallHandler{
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger,"com.github.pacalini.pica_comic/device").setMethodCallHandler{
                 _, res ->
             res.success(getDeviceInfo())
         }
         //获取http代理
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger,"kokoiro.xyz.pica_comic/proxy").setMethodCallHandler{
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger,"com.github.pacalini.pica_comic/proxy").setMethodCallHandler{
                 _, res ->
             res.success(getProxy())
         }
         //保持屏幕常亮
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger,"com.kokoiro.xyz.pica_comic/keepScreenOn").setMethodCallHandler{
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger,"com.github.pacalini.pica_comic/keepScreenOn").setMethodCallHandler{
                 call, _ ->
             if(call.method == "set")
                 window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
@@ -79,7 +79,7 @@ class MainActivity: FlutterFragmentActivity() {
             if(call.method == "link") {
                 val intent = Intent(
                     android.provider.Settings.ACTION_APP_OPEN_BY_DEFAULT_SETTINGS,
-                    Uri.parse("package:com.github.wgh136.pica_comic"),
+                    Uri.parse("package:com.github.pacalini.pica_comic"),
                 )
                 startActivity(intent)
                 res.success(null)
@@ -89,7 +89,7 @@ class MainActivity: FlutterFragmentActivity() {
                 } else {
                     Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
                 }
-                intent.data = Uri.parse("package:com.github.wgh136.pica_comic")
+                intent.data = Uri.parse("package:com.github.pacalini.pica_comic")
                 startActivity(intent)
                 res.success(null)
             } else if(call.method == "files_check") {

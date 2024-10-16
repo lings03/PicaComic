@@ -160,15 +160,18 @@ class CacheManager {
       count = res2.first[0] as int;
     }
 
+    compute((path) => Directory(path).size, cachePath)
+        .then((value) => _currentSize = value);
+
     while((_currentSize != null && _currentSize! > _limitSize) ||  count > 2000){
       var res = _db.select('''
         SELECT * FROM cache
-        ORDER BY time ASC
+        ORDER BY expires ASC
         limit 10
       ''');
       for(var row in res){
         var key = row[0] as String;
-        var dir = row[1] as int;
+        var dir = row[1] as String;
         var name = row[2] as String;
         var file = File('$cachePath/$dir/$name');
         if(await file.exists()){
@@ -286,6 +289,7 @@ class CachingFile{
     CacheManager()._db.execute('''
       INSERT OR REPLACE INTO cache (key, dir, name, expires) VALUES (?, ?, ?, ?)
     ''', [key, dir, name, DateTime.now().millisecondsSinceEpoch + 7 * 24 * 60 * 60 * 1000]);
+    await CacheManager().checkCache();
   }
 
   Future<void> cancel() async{

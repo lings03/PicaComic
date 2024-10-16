@@ -372,6 +372,21 @@ class _SettingsPageState extends State<SettingsPage> implements PopEntry{
               width: 140,
             ),
           ),
+          if (appdata.settings[32] == "0" || appdata.settings[32] == "2")
+            ListTile(
+              leading: const Icon(Icons.remove_red_eye),
+              title: Text("纯黑色模式".tl),
+              trailing: Switch(
+                value: appdata.settings[84] == "1",
+                onChanged: (i) {
+                  setState(() {
+                    appdata.settings[84] = i ? "1" : "0";
+                  });
+                  appdata.updateSettings();
+                  MyApp.updater?.call();
+                },
+              ),
+            ),
           if (App.isAndroid)
             ListTile(
               leading: const Icon(Icons.smart_screen_outlined),
@@ -610,7 +625,7 @@ class _SettingsPageState extends State<SettingsPage> implements PopEntry{
         ListTile(
           leading: const Icon(Icons.code),
           title: Text("项目地址".tl),
-          onTap: () => launchUrlString("https://github.com/wgh136/PicaComic",
+          onTap: () => launchUrlString("https://github.com/Pacalini/PicaComic",
               mode: LaunchMode.externalApplication),
           trailing: const Icon(Icons.arrow_right),
         ),
@@ -618,24 +633,24 @@ class _SettingsPageState extends State<SettingsPage> implements PopEntry{
           leading: const Icon(Icons.comment_outlined),
           title: Text("提出建议(Github)".tl),
           onTap: () => launchUrlString(
-              "https://github.com/wgh136/PicaComic/issues",
+              "https://github.com/Pacalini/PicaComic/issues",
               mode: LaunchMode.externalApplication),
           trailing: const Icon(Icons.arrow_right),
         ),
-        ListTile(
-          leading: const Icon(Icons.email),
-          title: Text("通过电子邮件联系我".tl),
-          onTap: () => launchUrlString("mailto://nyne19710@proton.me",
-              mode: LaunchMode.externalApplication),
-          trailing: const Icon(Icons.arrow_right),
-        ),
-        ListTile(
-          leading: const Icon(Icons.telegram),
-          title: Text("加入Telegram群".tl),
-          onTap: () => launchUrlString("https://t.me/pica_group",
-              mode: LaunchMode.externalApplication),
-          trailing: const Icon(Icons.arrow_right),
-        ),
+        // ListTile(
+        //   leading: const Icon(Icons.email),
+        //   title: Text("通过电子邮件联系我".tl),
+        //   onTap: () => launchUrlString("mailto://nyne19710@proton.me",
+        //       mode: LaunchMode.externalApplication),
+        //   trailing: const Icon(Icons.arrow_right),
+        // ),
+        // ListTile(
+        //   leading: const Icon(Icons.telegram),
+        //   title: Text("加入Telegram群".tl),
+        //   onTap: () => launchUrlString("https://t.me/pica_group",
+        //       mode: LaunchMode.externalApplication),
+        //   trailing: const Icon(Icons.arrow_right),
+        // ),
         Padding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom))
       ],
     );

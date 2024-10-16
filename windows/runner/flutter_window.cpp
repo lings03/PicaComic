@@ -65,7 +65,7 @@ bool FlutterWindow::OnCreate() {
 
     //检查系统代理的MethodChannel
     const flutter::MethodChannel<> channel(
-        flutter_controller_->engine()->messenger(), "kokoiro.xyz.pica_comic/proxy", 
+        flutter_controller_->engine()->messenger(), "com.github.pacalini.pica_comic/proxy",
         &flutter::StandardMethodCodec::GetInstance()
     );
     channel.SetMethodCallHandler(
@@ -81,7 +81,7 @@ bool FlutterWindow::OnCreate() {
     });
 
     //监听鼠标侧键的EventChannel
-    const auto channelName = "kokoiro.xyz.pica_comic/mouse";
+    const auto channelName = "com.github.pacalini.pica_comic/mouse";
     flutter::EventChannel<> channel2(
         flutter_controller_->engine()->messenger(), channelName, 
         &flutter::StandardMethodCodec::GetInstance()

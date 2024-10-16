@@ -168,6 +168,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     }
     light = ColorScheme.fromSeed(seedColor: color);
     dark = ColorScheme.fromSeed(seedColor: color, brightness: Brightness.dark);
+    if (appdata.settings[84] == "1") {
+      dark = dark.copyWith(surface: Colors.black).harmonized();
+    }
     return (light, dark);
   }
 

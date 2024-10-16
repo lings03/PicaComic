@@ -162,7 +162,7 @@ void Win32Window::readPlacement(HWND hwnd) {
     wchar_t appDataPath[MAX_PATH];
     GetEnvironmentVariableW(L"APPDATA", appDataPath, MAX_PATH);
     std::wstring path{appDataPath};
-    path += L"\\com.kokoiro.xyz\\pica_comic";
+    path += L"\\com.github.pacalini\\pica_comic";
     if (!std::filesystem::exists(path)) {
         std::filesystem::create_directories(path);
     }

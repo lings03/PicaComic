@@ -273,6 +273,16 @@ class _AppAppearanceState extends State<_AppAppearance>
             MyApp.updater?.call();
           },
         ),
+        if (appdata.settings[32] == "0" || appdata.settings[32] == "2")
+          SelectSettingWithAppdata(
+            icon: const Icon(Icons.remove_red_eye),
+            title: "纯黑色模式".tl,
+            options: ["禁用".tl, "启用".tl],
+            settingsIndex: 84,
+            onChanged: () {
+              MyApp.updater?.call();
+            },
+          ),
         SelectSetting(
           leading: const Icon(Icons.crop_square),
           title: "漫画块显示模式".tl,

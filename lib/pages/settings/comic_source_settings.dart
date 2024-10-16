@@ -273,7 +273,7 @@ class _ComicSourceSettingsState extends State<ComicSourceSettings> {
 
   void help() {
     launchUrlString(
-        "https://github.com/wgh136/PicaComic/blob/master/doc/comic_source.md");
+        "https://github.com/Pacalini/PicaComic/blob/master/doc/comic_source.md");
   }
 
   Future<void> handleAddSource(String url) async {

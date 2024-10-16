@@ -229,15 +229,16 @@ class _EhGalleryTile extends ComicTile {
   const _EhGalleryTile({required this.gallery, this.addonMenuOptions});
 
   List<String> _generateTags(List<String> tags) {
-    if (App.locale.languageCode != "zh") {
-      return tags;
-    }
     List<String> res = [];
     List<String> res2 = [];
     for (var tag in tags) {
       if (tag.contains(":")) {
         var splits = tag.split(":");
         if (splits[0] == "language") {
+          continue;
+        }
+        if (App.locale.languageCode != "zh") {
+          res.add(splits[1]);
           continue;
         }
         var lowLevelKey = ["character", "artist", "cosplayer", "group"];
@@ -256,8 +257,8 @@ class _EhGalleryTile extends ComicTile {
   }
 
   @override
-  int get maxLines =>
-      MediaQuery.of(App.globalContext!).size.width < 430 ? 1 : 2;
+  int get maxLines => 2;
+      // MediaQuery.of(App.globalContext!).size.width < 430 ? 1 : 2;
 
   @override
   ActionFunc? get read => () async {

@@ -23,6 +23,8 @@ class JmSettings extends StatefulWidget {
 }
 
 class _JmSettingsState extends State<JmSettings> {
+  bool autoSelectStream = appdata.settings[15] == "1";
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -44,12 +46,36 @@ class _JmSettingsState extends State<JmSettings> {
             },
           ),
         ),
-        SelectSettingWithAppdata(
-          icon: const Icon(Icons.domain),
-          settingsIndex: 17,
-          title: "Api Domain",
-          options: ["分流1".tl, "分流2".tl, "分流3".tl, "分流4".tl],
-          onChanged: () => JmNetwork().loginFromAppdata(),
+        ListTile(
+          leading: const Icon(Icons.track_changes),
+          title: Text("自动选择域名".tl),
+          subtitle: Text("登录时自动选择API域名".tl),
+          trailing: Switch(
+            value: autoSelectStream,
+            onChanged: (b){
+              b ? appdata.settings[15] = "1" : appdata.settings[15] = "0";
+              setState(() {
+                autoSelectStream = b;
+              });
+              appdata.updateSettings();
+              JmNetwork().loginFromAppdata();
+            },
+          ),
+        ),
+        ListTile(
+          leading: const Icon(Icons.domain),
+          title: Text("API域名".tl),
+          trailing: Select(
+            initialValue: int.parse(appdata.settings[17]),
+            values: [
+              "分流1".tl,"分流2".tl,"分流3".tl,"分流4".tl,
+            ],
+            onChange: (i){
+              appdata.settings[17] = i.toString();
+              appdata.updateSettings();
+              JmNetwork().loginFromAppdata();
+            },
+          )
         ),
         ListTile(
           leading: const Icon(Icons.image),

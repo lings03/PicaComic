@@ -395,7 +395,7 @@ class EhNetwork {
           final coverPath = item.querySelector("td.gl1e > div > a > img")?.attributes["src"] ?? "";
           final stars = getStarsFromPosition(item.querySelector("td.gl2e > div > div.gl3e > div.ir")?.attributes["style"] ?? "");
           final link = item.querySelector("td.gl1e > div > a")?.attributes["href"] ?? "";
-          final tags = item.querySelectorAll("div.gtl").map((e) => e.attributes["title"] ?? "").toList();
+          final tags = [...item.querySelectorAll("div.gt"), ...item.querySelectorAll("div.gtl")].map((e) => e.attributes["title"] ?? "").toList();
           final pages = int.tryParse(item.querySelectorAll("td.gl2e > div > div.gl3e > div")
               .firstWhereOrNull((element) => element.text.contains("pages"))?.text.nums ?? "");
           galleries.add(EhGalleryBrief(title, type, time, uploader, coverPath, stars, link, tags, pages: pages));

@@ -3,8 +3,8 @@
 
 #define MyAppName "Pica Comic"
 #define MyAppVersion "{{version}}"
-#define MyAppPublisher "wgh136"
-#define MyAppURL "https://github.com/wgh136/PicaComic"
+#define MyAppPublisher "Pacalini"
+#define MyAppURL "https://github.com/Pacalini/PicaComic"
 #define MyAppExeName "pica_comic.exe"
 #define RootPath "{{root_path}}"
 

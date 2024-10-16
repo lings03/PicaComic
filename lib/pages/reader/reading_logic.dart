@@ -349,13 +349,14 @@ class ComicReadingPageLogic extends StateController {
 
   void handleKeyboard(KeyEvent event) {
     if(event is KeyDownEvent || event is KeyRepeatEvent){
+      bool reverse = appdata.settings[9] == "2" || appdata.settings[9] == "6";
       switch (event.logicalKey) {
         case LogicalKeyboardKey.arrowDown:
         case LogicalKeyboardKey.arrowRight:
-          jumpToNextPage();
+          reverse ? jumpToLastPage(): jumpToNextPage();
         case LogicalKeyboardKey.arrowUp:
         case LogicalKeyboardKey.arrowLeft:
-          jumpToLastPage();
+          reverse ? jumpToNextPage(): jumpToLastPage();
         case LogicalKeyboardKey.f12:
           fullscreen();
       }
