@@ -71,7 +71,7 @@ dependencies:
       url: https://github.com/wgh136/webdav_client
       ref: main
   dio_http2_adapter: 2.5.3
-  sqlite3: 2.4.6
+  sqlite3: 2.4.7
   sqlite3_flutter_libs: any
   zip_flutter:
     git:
