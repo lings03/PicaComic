@@ -559,7 +559,7 @@ class EhNetwork {
           .querySelector("div#gleft > div#gd1 > div")!
           .attributes["style"]!;
       coverPath =
-          RegExp(r"https?://([-a-zA-Z0-9.]+(/\S*)?\.(?:jpg|jpeg|gif|png))")
+          RegExp(r"https?://([-a-zA-Z0-9.]+(/\S*)?\.(?:jpg|jpeg|gif|png|webp))")
               .firstMatch(coverPath)![0]!;
       //评论
       var comments = <Comment>[];
@@ -699,7 +699,7 @@ class EhNetwork {
     try {
       var urls_ = <String>[];
       var temp = parse(res.data);
-      var links = temp.querySelectorAll("div#gdt > div.gdtm > div > a");
+      var links = temp.querySelectorAll("div#gdt > a");
       for (var link in links) {
         urls_.add(link.attributes["href"]!);
       }
